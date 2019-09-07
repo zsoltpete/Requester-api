@@ -14,11 +14,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const categoryDao_1 = __importDefault(require("../store/categoryDao"));
+const userDao_1 = __importDefault(require("../store/userDao"));
 const apiRouter = express_1.Router();
 const getCategories = (request, response) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const databaseResponse = yield categoryDao_1.default.getAll();
-        console.log("Ott van");
+        response.status(databaseResponse.status).send(databaseResponse.value);
+    }
+    catch (e) {
+        response.status(500).send();
+    }
+});
+const getUsers = (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const databaseResponse = yield userDao_1.default.getAll();
         response.status(databaseResponse.status).send(databaseResponse.value);
     }
     catch (e) {
@@ -26,5 +35,6 @@ const getCategories = (request, response) => __awaiter(void 0, void 0, void 0, f
     }
 });
 apiRouter.get('/categories', getCategories);
+apiRouter.get('/users', getUsers);
 exports.default = apiRouter;
 //# sourceMappingURL=api.js.map
