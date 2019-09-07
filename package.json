@@ -1,0 +1,39 @@
+{
+  "name": "Requester-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsoltpete/Requester-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zsoltpete/Requester-api/issues"
+  },
+  "homepage": "https://github.com/zsoltpete/Requester-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.6.13",
+    "dotenv": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2",
+    "@types/mongoose": "^5.5.11",
+    "@types/node": "^12.6.8",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.17.0",
+    "typescript": "^3.5.3"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+  }
+}
